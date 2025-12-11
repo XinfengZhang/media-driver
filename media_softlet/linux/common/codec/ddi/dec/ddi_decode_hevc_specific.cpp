@@ -76,7 +76,7 @@ VAStatus DdiDecodeHevc::ParseSliceParams(
         memset(codecSclParamsRext, 0, numSlices * sizeof(CODEC_HEVC_EXT_SLICE_PARAMS));
     }
 
-    uint32_t sliceBaseOffset = GetBsBufOffset(m_groupIndex);
+    uint32_t sliceBaseOffset = m_decodeCtx->DecodeParams.m_dataSize; //GetBsBufOffset(m_groupIndex);
     uint32_t i, j, slcCount;
     for (slcCount = 0; slcCount < numSlices; slcCount++)
     {
